@@ -22,7 +22,7 @@ This project was intended to put in practice what we learned about stack and que
 
 ## Commands and usage:
 - <strong>push</strong>: this command push an element to the stack.
-  - <strong>Usage: push \<int\> 
+  - <strong>Usage:</strong> push \<int\> 
   - In case that the user only provide the command push, an error message is print as follow.
     ```
     holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
@@ -144,7 +144,7 @@ This project was intended to put in practice what we learned about stack and que
     50
     ```
 - <strong>nop</strong>: This command don't do anything.
-    - <strong>Usage:<\strong> nop
+    - <strong>Usage:</strong> nop
     - A few examples:
       ```
       holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
