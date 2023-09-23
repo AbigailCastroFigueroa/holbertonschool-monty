@@ -20,151 +20,66 @@ This project was intended to put in practice what we learned about stack and que
   Collection) as follow:
   > gcc -Wall -Werror -Wextra -pedantic \*.c -o monty
 
+## Example of use:
+```
+holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
+push 45
+push 2
+push 5
+pall
+nop
+push 7
+pall
+add
+pall
+swap
+pall
+pint
+push 3
+pop
+pall
+holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ ./monty 01
+5
+2
+45
+7
+5
+2
+45
+12
+2
+45
+2
+12
+45
+2
+2
+12
+45
+```
+
 ## Commands and usage:
 - <strong>push</strong>: this command push an element to the stack.
   - <strong>Usage:</strong> push \<int\> 
-  - In case that the user only provide the command push, an error message is print as follow.
-    ```
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
-    push
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ ./monty 01
-    L1: usage: push integer
-    ```
+  
 - <strong>pall</strong>: this command print all the stack. 
   - <strong>Usage: </strong> pall
 
-  - Example of simple test including both (push and pall) commands:
-    ```
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
-    push 3
-    push 4
-    push 1
-    pall
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ ./monty 01
-    1
-    4
-    3
-    ```
 - <strong>pint</strong>: this command print only the first element in the stack.
-  - <strong>Usage:</strong> pint, in case that only the command is provided an error message should be printed as follow.
-    ```
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
-    pint
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ ./monty 01
-    L1: can't pint, stack empty.
-    ```
-  - Example of a simple test:
-    ```
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
-    push 1
-    pint
-    push 2
-    pint
-    push 3
-    pint
-    pall
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ ./monty 01
-    1
-    2
-    3
-    3
-    2
-    1
-    ```
+  - <strong>Usage:</strong> pint
+    
 - <strong>pop</strong>: Remove the top element of the stack.
-    - <strong>Usage:</strong> pop, in case that a empty stack is given an error message should print as follow.
-      ```
-      holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
-      pop
-      holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ ./monty 01
-      L1: can't pop an empty stack
-      ```
-    - Example of a simple test:
-      ```
-      holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
-      push 3
-      push 1
-      push 5
-      pall
-      pop
-      pall
-      holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ ./monty 01
-      5
-      1
-      3
-      1
-      3
-      ```
+    - <strong>Usage:</strong> pop
+      
 - <strong>swap</strong>: Swap the top two elements of the stack.
-  - <strong>Usage:</strong> swap, in case that the stack size is less than 2, an error message should be print.
-    ```
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
-    push 1
-    swap
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ ./monty 01
-    L2: can't swap, stack too short.
-    ```
-  - Example of a simple test:
-    ```
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
-    push 1
-    push 47
-    push 3
-    pall
-    swap
-    pall
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ ./monty 01
-    3
-    47
-    1
-    47
-    3
-    1
-    ```
+  - <strong>Usage:</strong> swap
+    
 - <strong>add</strong>: Add the top two elements.
-  - <strong>Usage:</strong> add, if the stack is less than two elements, a error message should be printed.
-    ```
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
-    push 3
-    add
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ ./monty 01
-    L2: can't add, stack too short.
-    ```
-  - Example of a simple test:
-    ```
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
-    push 3
-    push 47
-    pall
-    add
-    pall
-    holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ ./monty 01
-    47
-    3
-    50
-    ```
+  - <strong>Usage:</strong> add
+    
 - <strong>nop</strong>: This command don't do anything.
     - <strong>Usage:</strong> nop
-    - A few examples:
-      ```
-      holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
-      push 1
-      push 3
-      nop
-      push 4
-      pall
-      holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ ./monty 01
-      4
-      3
-      1
-      ```
-      ```
-      holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ cat 01
-      nop
-      holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$ ./monty 01
-      holberton@holberton-ThinkPad-X1-Carbon-Gen-9:~/projects/holbertonschool-monty$
-      ```
-
+   
 ## My experience through the project
 As someone really new to this field, is easy to deal with simple programs or just doing some function and tested. Some of the challenges, well...understand the whole idea of how my program should flow generally speaking. How to break that general idea or concept in smaller pieces, then put everything together and test looking for conflicts or leaks, to start a debugging process and test again.
 
